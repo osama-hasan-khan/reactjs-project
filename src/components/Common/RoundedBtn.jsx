@@ -1,8 +1,11 @@
 import React from "react";
 
-function RoundedBtn({ icon }) {
+function RoundedBtn({ icon, handleClose }) {
   return (
-    <button className="text-[#8796a1] text-xl p-2 rounded-full hover:bg-[#3c454c]">
+    <button
+      onClick={handleClose}
+      className="text-[#8796a1] text-xl p-2 rounded-full hover:bg-[#3c454c]"
+    >
       {icon}
     </button>
   );

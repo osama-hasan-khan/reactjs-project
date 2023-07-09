@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import RoundedBtn from "./Common/RoundedBtn";
 import { MdPeopleAlt } from "react-icons/md";
 import { TbCircleDashed } from "react-icons/tb";
@@ -10,9 +10,12 @@ import Chats from "./Chats";
 import Button from "./Common/Button";
 import DropDown from "./Common/DropDown";
 import DropDownItem from "./Common/DropDownItem";
+import { CommunitiesContext } from "../context/CommunitiesContext";
 
 const LeftMenu = () => {
   const [filter, setFilter] = useState(false);
+
+  const { handleClose } = useContext(CommunitiesContext);
 
   return (
     // LeftMenu Container
@@ -23,7 +26,12 @@ const LeftMenu = () => {
       <div className="flex justify-between items-center bg-[#202d33] h-[60px] p-3">
         {/* Profle picture */}
 
-        <img src={pp} alt="profile_picture" className="rounded-full w-[40px]" />
+        <img
+          src={pp}
+          alt="profile_picture"
+          className="rounded-full w-[40px] cursor-pointer"
+          onClick={handleClose}
+        />
 
         {/* Profile nav buttons */}
         <div className="flex justify-between items-center w-[175px]">

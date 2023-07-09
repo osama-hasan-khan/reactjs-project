@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import RoundedBtn from "./Common/RoundedBtn";
 import { messagesData } from "../data/whatsapp";
 import { MdSearch, MdSend } from "react-icons/md";
@@ -8,9 +8,12 @@ import { AiOutlinePaperClip } from "react-icons/ai";
 import { BsFillMicFill } from "react-icons/bs";
 import { cs1 } from "../assets/whatsapp";
 import Message from "./Message";
+import InputBar from "./Common/InputBar";
+import { SideBarContext } from "../context/SideBarContext";
 
 const ChatDetails = () => {
   const [messages, setMessages] = useState(messagesData);
+  const { handleClose } = useContext(SideBarContext);
 
   return (
     //  Chat detail main container
@@ -39,7 +42,8 @@ const ChatDetails = () => {
 
         {/* Buttons */}
         <div className="flex justify-between items-center w-[85px]">
-          <RoundedBtn icon={<MdSearch />} />
+          <RoundedBtn icon={<MdSearch />} handleClose={handleClose} />
+          {/* <InputBar /> */}
           <RoundedBtn icon={<HiDotsVertical />} />
         </div>
       </div>

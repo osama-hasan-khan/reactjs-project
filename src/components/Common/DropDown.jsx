@@ -8,7 +8,7 @@ const DropDown = ({ children, trigger }) => {
       <div
         className={`
       min-w-max absolute right-0 mt-3 mr-3 text-white divide-y divide-gray-100
-      rounded-l shadow overflow-hidden
+      rounded-l  overflow-hidden shadow-2xl
       `}
       >
         {show && <ul>{children}</ul>}
